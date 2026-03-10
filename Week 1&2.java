@@ -1,136 +1,187 @@
 LEVEL 1
 
-1. Harry’s age in 2024
-public class HarryAge {
-    public static void main(String[] args) {
-        int birthYear = 2000;
-        int currentYear = 2024;
-        int age = currentYear - birthYear;
+1. Check if a number is divisible by 5
+import java.util.Scanner;
 
-        System.out.println("Harry's age in 2024 is " + age);
+public class DivisibleBy5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        if (number % 5 == 0) {
+            System.out.println("Is the number " + number + " divisible by 5? Yes");
+        } else {
+            System.out.println("Is the number " + number + " divisible by 5? No");
+        }
     }
 }
 
 
-2. Sam’s average mark in PCM
-public class AveragePCM {
+
+2. Check if the first number is the smallest of 3 numbers
+import java.util.Scanner;
+
+public class SmallestCheck {
     public static void main(String[] args) {
-        int maths = 94;
-        int physics = 95;
-        int chemistry = 96;
+        Scanner sc = new Scanner(System.in);
+        int number1 = sc.nextInt();
+        int number2 = sc.nextInt();
+        int number3 = sc.nextInt();
 
-        double average = (maths + physics + chemistry) / 3.0;
+        if (number1 < number2 && number1 < number3) {
+            System.out.println("Is the first number the smallest? Yes");
+        } else {
+            System.out.println("Is the first number the smallest? No");
+        }
+    }
+}
+ 
 
-        System.out.println("Sam’s average mark in PCM is " + average);
+
+
+
+3. Check which number is the largest
+import java.util.Scanner;
+
+public class LargestCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number1 = sc.nextInt();
+        int number2 = sc.nextInt();
+        int number3 = sc.nextInt();
+
+        System.out.println("Is the first number the largest? " + (number1 > number2 && number1 > number3));
+        System.out.println("Is the second number the largest? " + (number2 > number1 && number2 > number3));
+        System.out.println("Is the third number the largest? " + (number3 > number1 && number3 > number2));
     }
 }
 
 
-3. Convert 10.8 km to miles
-public class KmToMiles {
+
+4. Sum of n natural numbers
+import java.util.Scanner;
+
+public class NaturalSum {
     public static void main(String[] args) {
-        double km = 10.8;
-        double miles = km * 1.6;
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
 
-        System.out.println("The distance " + km + " km in miles is " + miles);
-    }
-}
-
-
-4. Profit and profit percentage
-public class ProfitLoss {
-    public static void main(String[] args) {
-        int costPrice = 129;
-        int sellingPrice = 191;
-
-        int profit = sellingPrice - costPrice;
-        double profitPercent = (profit * 100.0) / costPrice;
-
-        System.out.println("The Cost Price is INR " + costPrice + " and Selling Price is INR " + sellingPrice +
-                "\nThe Profit is INR " + profit + " and the Profit Percentage is " + profitPercent);
+        if (number >= 0) {
+            int sum = number * (number + 1) / 2;
+            System.out.println("The sum of " + number + " natural numbers is " + sum);
+        } else {
+            System.out.println("The number " + number + " is not a natural number");
+        }
     }
 }
 
 
 LEVEL 2
 
-1. Basic Calculator
+1. Print odd and even numbers from 1 to n
 import java.util.Scanner;
 
-public class Calculator {
+public class OddEvenNumbers {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double number1 = sc.nextDouble();
-        double number2 = sc.nextDouble();
+        int number = sc.nextInt();
 
-        double add = number1 + number2;
-        double sub = number1 - number2;
-        double mul = number1 * number2;
-        double div = number1 / number2;
-
-        System.out.println("The addition, subtraction, multiplication, and division value of 2 numbers " 
-        + number1 + " and " + number2 + " is " + add + ", " + sub + ", " + mul + ", and " + div);
-    }
-}
-2. Area of triangle (sq inches and sq cm)
-import java.util.Scanner;
-
-public class TriangleArea {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        double base = sc.nextDouble();
-        double height = sc.nextDouble();
-
-        double areaCm = 0.5 * base * height;
-        double areaIn = areaCm / (2.54 * 2.54);
-
-        System.out.println("The Area of the triangle in sq in is " + areaIn + " and sq cm is " + areaCm);
+        if(number >= 0){
+            for(int i = 1; i <= number; i++){
+                if(i % 2 == 0){
+                    System.out.println(i + " is Even");
+                } else {
+                    System.out.println(i + " is Odd");
+                }
+            }
+        } else {
+            System.out.println("The number is not a natural number");
+        }
     }
 }
 
 
-3. Find side of square from perimeter
+2. Employee bonus based on years of service
 import java.util.Scanner;
 
-public class SquareSide {
+public class EmployeeBonus {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double perimeter = sc.nextDouble();
+        double salary = sc.nextDouble();
+        int years = sc.nextInt();
 
-        double side = perimeter / 4;
-
-        System.out.println("The length of the side is " + side + " whose perimeter is " + perimeter);
+        if(years > 5){
+            double bonus = salary * 0.05;
+            System.out.println("Bonus amount = " + bonus);
+        } else {
+            System.out.println("Bonus amount = 0");
+        }
     }
 }
+
+
+
+3. Multiplication table from 6 to 9
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        for(int i = 6; i <= 9; i++){
+            System.out.println(number + " * " + i + " = " + (number * i));
+        }
+    }
+}
+
+
 LEVEL 3
 
-1. Celsius to Fahrenheit
+1.	Using multiple if-else statements
+
+
 import java.util.Scanner;
 
-public class CelsiusToFahrenheit {
+public class LeapYear1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double celsius = sc.nextDouble();
+        int year = sc.nextInt();
 
-        double fahrenheitResult = (celsius * 9 / 5) + 32;
-
-        System.out.println("The " + celsius + " celsius is " + fahrenheitResult + " fahrenheit");
+        if(year >= 1582){
+            if(year % 400 == 0){
+                System.out.println("Year is a Leap Year");
+            }
+            else if(year % 100 == 0){
+                System.out.println("Year is not a Leap Year");
+            }
+            else if(year % 4 == 0){
+                System.out.println("Year is a Leap Year");
+            }
+            else{
+                System.out.println("Year is not a Leap Year");
+            }
+        }
+        else{
+            System.out.println("Year is not a Leap Year");
+        }
     }
 }
 
 
-
-
-2. Fahrenheit to Celsius
+Using one if statement with logical operators
 import java.util.Scanner;
 
-public class FahrenheitToCelsius {
+public class LeapYear2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double fahrenheit = sc.nextDouble();
+        int year = sc.nextInt();
 
-        double celsiusResult = (fahrenheit - 32) * 5 / 9;
-
-        System.out.println("The " + fahrenheit + " fahrenheit is " + celsiusResult + " celsius");
+        if(year >= 1582 && (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))){
+            System.out.println("Year is a Leap Year");
+        }
+        else{
+            System.out.println("Year is not a Leap Year");
+        }
     }
 }
